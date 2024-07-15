@@ -47,7 +47,7 @@ export default function SignUp() {
         <Link to="/" className='text-sm 
           sm:text-xl font-bold dark:text-white'>
             <span className='px-2 py-1 bg-gradient-to-r from-blue-500 
-            via-purple-700 to-pink-500 rounded-lg text-white text-4xl'>Hardt4il</span>
+            via-purple-700 to-fuchsia-500 rounded-lg text-white text-4xl'>Hardt4il</span>
           </Link>
           <p className='text-sm mt-5'>
             Sign up for the best content in Mountain Biking
