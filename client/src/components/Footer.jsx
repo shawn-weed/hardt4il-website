@@ -37,27 +37,31 @@ export default function FooterCom() {
                   </div>
                   <div className=''>
                     <Footer.Title title='Follow Us' />
-                    <Footer.LinkGroup col-2 className='self-center justify-between'>
-                        <Footer.Icon href='https://www.facebook.com/profile.php?id=61561248860591' 
-                        icon={BsFacebook} 
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        />
-                        <Footer.Icon href='https://www.instagram.com/hardt4il' 
-                        icon={BsInstagram} 
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        />
-                        <Footer.Icon href='https://youtube.com/@hardt4il' 
-                        icon={BsYoutube} 
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        />
-                        <Footer.Icon href='https://www.tiktok.com/@hardt4il_mtb' 
-                        icon={BsTiktok} 
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        />
+                    <Footer.LinkGroup className=' self-center justify-evenly'>
+                        <div className='col-auto space-y-4'>
+                            <Footer.Icon href='https://www.facebook.com/profile.php?id=61561248860591' 
+                            icon={BsFacebook} 
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            />
+                            <Footer.Icon href='https://www.instagram.com/hardt4il' 
+                            icon={BsInstagram} 
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            />
+                        </div>
+                        <div className='mr-10 col-auto space-y-4'>
+                            <Footer.Icon href='https://youtube.com/@hardt4il' 
+                            icon={BsYoutube} 
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            />
+                            <Footer.Icon href='https://www.tiktok.com/@hardt4il_mtb' 
+                            icon={BsTiktok} 
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            />
+                        </div>
                     </Footer.LinkGroup>
                   </div>
                   <div>
