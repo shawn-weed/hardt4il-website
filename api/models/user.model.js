@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     profilePicture:{
         type: String,
-        default: "",
+        default: 'https://www.facebook.com/photo/?fbid=122116674878374962&set=a.122116674896374962&__cft__[0]=AZVgZefBfA4dG2xo0aRBk6uRYWoAhsNH9Zpplj8-REApx1bBICiUkYpWJPHRRDTtWKunHJYThaHAN1x9j3CPFrMih3D5EGX2Hql-3z1r_teevEWcFkJAEsdYiIRTfwUH5nYyFg-0VbVEt8oM3INfJkAEQ-IlvGPcAer39gwxzamBoA&__tn__=EH-R',
     },
     }, {timestamps: true}
 );
