@@ -14,7 +14,7 @@ export default function Header() {
     const { theme } = useSelector((state) => state.theme)
     
   return (
-    <Navbar className='border-b-2 dark:!bg-[#1d1d1d]'>
+    <Navbar className='border-b-2 dark:!bg-[#2d2d2d]'>
         <Link to="/" className='self-center whitespace-nowrap text-sm 
         sm:text-xl font-semibold dark:text-white'>
           <span className='px-2 py-1 bg-gradient-to-r from-blue-500 
