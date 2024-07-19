@@ -26,9 +26,10 @@ export const updateUser = async (req, res, next) => {
         if(req.body.username !== req.body.username.toLowerCase()){
             return next(errorHandler(400, 'Username must be lowercasae'));
         }
-        if (!req.body.username.match(/^[a-zA-Z0-9]+$/)){
-            return next(errorHandler(400, 'Username can only contain letter and numbers'));
+        if (!req.body.username.match(/^[a-zA-Z0-9_]+$/)){
+            return next(errorHandler(400, 'Username can only contain letters, numbers and underscore'));
         }
+    }
         try {
             const updatedUser = await User.findByIdAndUpdate(req.params.userId, {
                 $set: {
@@ -43,7 +44,4 @@ export const updateUser = async (req, res, next) => {
         } catch (error) {
             next(error)
         }
-    }
-
-
 }
