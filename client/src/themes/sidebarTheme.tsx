@@ -47,7 +47,7 @@ export const ownTheme : FlowbiteSidebarTheme ={
         }
     },
     "item": {
-        "base": "flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+        "base": "flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-[#3d3d3d]",
         "active": " border border-[#E74695] bg-gray-100 dark:bg-transparent",
         "collapsed": {
             "insideCollapse": "group w-full pl-8 transition duration-75",
