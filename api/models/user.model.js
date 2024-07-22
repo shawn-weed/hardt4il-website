@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "https://i.ibb.co/zH54WFS/default-Profile-Photo.jpg",
     },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+    },
     }, {timestamps: true}
 );
 

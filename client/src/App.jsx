@@ -8,7 +8,9 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CreatePost from './pages/CreatePost';
 import PrivateRoute from './components/PrivateRoute';
+import AdminPrivateRoute from './components/AdminPrivateRoute';
 
 
 export default function App() {
@@ -17,13 +19,16 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='about' element={<About />} />
+        <Route path='/about' element={<About />} />
         <Route element ={<PrivateRoute />}> 
-          <Route path='dashboard' element={<Dashboard />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Route>
-        <Route path='projects' element={<Projects />} />
-        <Route path='sign-in' element={<SignIn />} />
-        <Route path='sign-up' element={<SignUp />} />
+        <Route element ={<AdminPrivateRoute />}> 
+          <Route path='/create-post' element={<CreatePost />} />
+        </Route>
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/sign-up' element={<SignUp />} />
       </Routes>
       <Footer />
     </BrowserRouter>
