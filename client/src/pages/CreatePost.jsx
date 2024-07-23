@@ -15,7 +15,7 @@ export default function CreatePost() {
   const [formData, setFormData] = useState({})
   const [publishError, setPublishError] = useState(null);
 
-  navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleUploadImage = async () => {
     try {
@@ -48,7 +48,7 @@ export default function CreatePost() {
           }
       );
     } catch (error) {
-        setImageUploadError('Image upload failed');;
+        setImageUploadError('Image upload failed');
         setImageUploadProgress(null);
         console.log(error);
     }
