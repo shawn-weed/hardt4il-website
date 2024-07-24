@@ -17,12 +17,12 @@ export default function DashPosts() {
             const data = await res.json();
             if(res.ok) {
               setUserPosts(data.posts);
+              if(data.posts.length < 9) {
+                setShowMore(false);
+              }
             }
           } catch (error) {
             console.log(error.message);
-            if(data.posts.length < 9) {
-              setShowMore(false);
-            }
           }
         };
         if(currentUser.isAdmin) {
