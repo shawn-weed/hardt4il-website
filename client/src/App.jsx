@@ -14,6 +14,7 @@ import PrivateRoute from './components/PrivateRoute';
 import AdminPrivateRoute from './components/AdminPrivateRoute';
 import PostPage from './pages/PostPage';
 import ScrollToTop from './components/ScrollToTop';
+import Search from './pages/Search';
 
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
         <Route path='/projects' element={<Projects />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/search' element={<Search />} />
         <Route path='/post/:postSlug' element={<PostPage />} />
       </Routes>
       <Footer />
