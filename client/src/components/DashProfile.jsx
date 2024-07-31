@@ -17,7 +17,7 @@ import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { Link } from "react-router-dom";
 
 export default function DashProfile() {
-    const {currentUser, error, loading} = useSelector(state => state.user)
+    const {currentUser, error, loading} = useSelector((state) => state.user)
     const [imageFile, setImageFile] = useState(null)
     const [imageFileUrl, setImageFileUrl] = useState(null);
     const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null);
@@ -206,9 +206,9 @@ export default function DashProfile() {
             <Button 
               gradientDuoTone='purpleToPink' 
               type='submit' 
-              outline disabled={loading || imageFileUploading}
+              outline disabled={loading && loading === true || imageFileUploading}
             >
-              {loading ? 'Loading...' : 'Update'}
+              {loading === true ? 'Loading...' : 'Update'}
             </Button>
             {
               currentUser.isAdmin && (

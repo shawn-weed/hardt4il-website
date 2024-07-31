@@ -1,8 +1,12 @@
 import { Footer } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import { BsFacebook, BsInstagram, BsYoutube, BsTiktok } from 'react-icons/bs';
+import { useSelector } from 'react-redux';
+import logo from '../assets/Hardtail text logo.png';
+import logoWhite from '../assets/Hardtail logo white.png';
 
 export default function FooterCom() {
+  const { theme } = useSelector((state) => state.theme);
   return (
     <Footer container className='border border-t-2 border-fuchsia-500 dark:!bg-[#1d1d1d]'>
         <div className='w-full max-w-7xl mx-auto'>
@@ -10,9 +14,9 @@ export default function FooterCom() {
                 <div className='mt-5'>
                     <Link to="/" className='self-center whitespace-nowrap text-lg 
                     sm:text-xl font-semibold dark:text-white'>
-                        <span className='px-2 py-1 bg-gradient-to-r from-blue-500 
-                        via-purple-700 to-fuchsia-500 rounded-lg text-white'>
-                            Hardt4il
+                        <span>
+                        {theme === 'light' ? <img src={logo} className='h-12 border border-fuchsia-500 rounded-lg' /> :
+                        <img src={logoWhite} className='h-12 border border-fuchsia-500 rounded-lg' />}
                         </span>
                     </Link>
                 </div>

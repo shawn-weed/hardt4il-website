@@ -6,6 +6,8 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
 import { signoutSuccess } from '../redux/user/userSlice';
+import logo from '../assets/Hardtail text logo.png';
+import logoWhite from '../assets/Hardtail logo white.png';
 
  
 export default function Header() {
@@ -54,8 +56,10 @@ export default function Header() {
     <Navbar className='border-b-2 dark:!bg-[#2d2d2d]'>
         <Link to="/" className='self-center whitespace-nowrap text-sm 
         sm:text-xl font-semibold dark:text-white'>
-          <span className='px-2 py-1 bg-gradient-to-r from-blue-500 
-          via-purple-700 to-fuchsia-500 rounded-lg text-white'>Hardt4il</span>
+          <span className=''>
+            {theme === 'light' ? <img src={logo} className='h-12 border border-fuchsia-500 rounded-lg' /> :
+            <img src={logoWhite} className='h-12 border border-fuchsia-500 rounded-lg' />}
+          </span>
         </Link>
         <form onSubmit={handleSubmit}>
             <TextInput 
@@ -114,9 +118,9 @@ export default function Header() {
                     About
                 </Link>
             </Navbar.Link>
-            <Navbar.Link active={path === "/projects"} as={'div'}>
-                <Link to='/projects'>
-                    Projects
+            <Navbar.Link active={path === "/media"} as={'div'}>
+                <Link to='/media'>
+                    Media
                 </Link>
             </Navbar.Link>
         </Navbar.Collapse>    
