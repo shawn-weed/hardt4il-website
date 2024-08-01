@@ -6,8 +6,6 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
 import { signoutSuccess } from '../redux/user/userSlice';
-// import logo from '../assets/Hardtail text logo.png';
-import logoWhite from '../assets/Hardtail logo white.png';
  
 export default function Header() {
     const path = useLocation().pathname;
@@ -58,7 +56,7 @@ export default function Header() {
         sm:text-xl font-semibold dark:text-white'>
           <span className=''>
             {theme === 'light' ? <img src={logo} className='h-12 border border-fuchsia-500 rounded-lg' /> :
-            <img src={logoWhite} className='h-12 border border-fuchsia-500 rounded-lg' />}
+            <img src={whiteLogo} className='h-12 border border-fuchsia-500 rounded-lg' />}
           </span>
         </Link>
         <form onSubmit={handleSubmit}>
