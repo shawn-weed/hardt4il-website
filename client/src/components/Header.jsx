@@ -6,9 +6,8 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
 import { signoutSuccess } from '../redux/user/userSlice';
-import logo from '../assets/Hardtail text logo.png';
+// import logo from '../assets/Hardtail text logo.png';
 import logoWhite from '../assets/Hardtail logo white.png';
-
  
 export default function Header() {
     const path = useLocation().pathname;
@@ -18,7 +17,8 @@ export default function Header() {
     const {currentUser} = useSelector((state) => state.user);
     const { theme } = useSelector((state) => state.theme);
     const [searchTerm, setSearchTerm] = useState('');
-    console.log(searchTerm);
+    const logo = 'https://firebasestorage.googleapis.com/v0/b/hardt4il.appspot.com/o/assets%2FHardtail%20text%20logo.png?alt=media&token=297704a5-b292-4267-a3b2-1a35b119f80e'
+    const whiteLogo = 'https://firebasestorage.googleapis.com/v0/b/hardt4il.appspot.com/o/assets%2FHardtail%20logo%20white.png?alt=media&token=41d56f13-ff89-49fe-87b3-ef176fc965bb'
 
     useEffect (() => {
       const urlParams = new URLSearchParams(location.search);

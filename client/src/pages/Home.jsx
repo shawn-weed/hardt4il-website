@@ -1,10 +1,10 @@
-import video from '../assets/My Movie.mp4';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard'
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  const video = 'https://firebasestorage.googleapis.com/v0/b/hardt4il.appspot.com/o/assets%2FHardt4il.mp4?alt=media&token=f8ed80b2-df29-47f8-a64e-dd73380c795b'
 
   useEffect(() => {
     const fetchPosts = async () => {
