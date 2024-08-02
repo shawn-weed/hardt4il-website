@@ -7,7 +7,7 @@ export default function AboutMe() {
         <div>
           <h1 className='text-3xl font-semibold text-center my-7'>About Me</h1>
         </div>
-        <div className='text-md text-gray-500 flex flex-col gap-6'>
+        <div className='text-md text-gray-300 flex flex-col gap-6'>
           <p>
            My name is Shawn and obviously, I love mountain biking. Career wise, I am a developer. I've
            loved programming since my first "Intro to Web Development" course. I moved on from programming
@@ -18,10 +18,10 @@ export default function AboutMe() {
           </p>
           This idea started when I wanted to build something around my love for mountain biking. I decided 
           to dive into a full stack project. I chose a MERN stack for its popularity and features. React is
-          known for its scalability. I can quickly adapt the site to fit my needs as it grows.
+          known for its scalability so I can quickly adapt the site to fit my needs as it grows.
           <p>
-            <a href='https://www.github.com/kurknuckle' className='text-gray-400 hover:underline'>Here </a> 
-            you can find my GitHub with other projects I have worked on. You can find me on <a href='https://www.linkedin.com/in/shawn-weed/' className='hover:underline text-gray-400'>LinkedIn</a> as well
+            <a href='https://www.github.com/kurknuckle' className='text-fuchsia-700 hover:underline'>Here </a> 
+            you can find my GitHub with other projects I have worked on. You can find me on <a href='https://www.linkedin.com/in/shawn-weed/' className='hover:underline text-fuchsia-700'>LinkedIn</a> as well
           </p>
 
           <p>

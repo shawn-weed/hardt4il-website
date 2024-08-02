@@ -15,6 +15,7 @@ import { updateStart,
 import { useDispatch } from "react-redux";
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { Link } from "react-router-dom";
+import { inputTheme } from "../themes/textInputTheme";
 
 export default function DashProfile() {
     const {currentUser, error, loading} = useSelector((state) => state.user)
@@ -185,19 +186,22 @@ export default function DashProfile() {
               className='rounded-full w-full h-full object-cover border-8 border-[lightgray]' />
             </div>
               {imagefileUploadError && <Alert color='failure'>{imagefileUploadError}</Alert>}
-            <TextInput 
+            <TextInput
+              theme={inputTheme} 
               type='text' 
               id='username' 
               placeholder='username'
               defaultValue={currentUser.username} onChange={handleChange} 
             />
-            <TextInput 
+            <TextInput
+              theme={inputTheme}  
               type='email' 
               id='email' 
               placeholder='email'
               defaultValue={currentUser.email} onChange={handleChange} 
             />
-            <TextInput 
+            <TextInput
+              theme={inputTheme} 
               type='password' 
               id='password' 
               placeholder='password' onChange={handleChange}

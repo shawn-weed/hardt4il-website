@@ -20,7 +20,7 @@ export default function Home() {
       <div className=''>
         <div className='videoText'>
           <div className=''>
-            <video src={video} autoPlay loop muted/>
+            <video src={video} autoPlay loop muted playsInline/>
           </div>
           <div className='text'>
             <h1>Hardt4il</h1>

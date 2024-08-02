@@ -10,7 +10,23 @@ export default {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gray: {
+          "50": "#f5f5f5",
+          "100": "#e1e1e1",
+          "200": "#e2e2e2",
+          "300": "#7d7d7d",
+          "400": "#5d5d5d",
+          "500": "#4d4d4d",
+          "600": "#3d3d3d",
+          "700": "#2d2d2d",
+          "800": "#1d1d1d",
+          "900": "#0d0d0d",
+          "950": "#0f0f0f0",
+        },
+      },
+    },
   },
   plugins: [
     require('flowbite/plugin'), 

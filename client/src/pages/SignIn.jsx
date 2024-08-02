@@ -7,9 +7,13 @@ import OAuth from '../components/OAuth';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
+  const { theme } = useSelector((state) => state.theme);
   const {loading, error: errorMessage} = useSelector(state => state.user)
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const logo = 'https://firebasestorage.googleapis.com/v0/b/hardt4il.appspot.com/o/assets%2FHardtail%20text%20logo.png?alt=media&token=297704a5-b292-4267-a3b2-1a35b119f80e'
+  const whiteLogo = 'https://firebasestorage.googleapis.com/v0/b/hardt4il.appspot.com/o/assets%2FHardtail%20logo%20white.png?alt=media&token=41d56f13-ff89-49fe-87b3-ef176fc965bb'
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
@@ -43,11 +47,12 @@ export default function SignIn() {
       md:flex-row md:items-center gap-5'>
         {/*left side*/}
         <div className = "flex-1">
-        <Link to="/" className='text-sm 
-          sm:text-xl font-bold dark:text-white'>
-            <span className='px-2 py-1 bg-gradient-to-r from-blue-500 
-            via-purple-700 to-fuchsia-500 rounded-lg text-white text-4xl'>Hardt4il</span>
-          </Link>
+        <Link to="/" className=''>
+          <span className=''>
+            {theme === 'light' ? <img src={logo} className='h-30' /> :
+            <img src={whiteLogo} className='h-30' />}
+          </span>
+        </Link>
           <p className='text-sm mt-5'>
             Sign in. The good stuff is waiting.
           </p>

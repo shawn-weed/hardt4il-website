@@ -7,13 +7,13 @@ export default function About() {
         <div>
           <h1 className='text-3xl font-semibold text-center my-7'>About Hardt4il</h1>
         </div>
-        <div className='text-md text-gray-500 flex flex-col gap-6'>
+        <div className='text-md text-gray-300 flex flex-col gap-6'>
           <p>
             Hardt4il is a brand dedicated to Mountain Biking. Sure, we may cover other topics and share our thoughts on RC cars, video games, music, etc. but at our core we are bikers just filling the time until our next ride. Come join us and stay up to date on the latest mountain biking gear, tips, and trends.
           </p>
 
           <p>
-            <a href='./search' className='hover:underline text-gray-400'>Here</a> you will find products reviews, articles covering what I have learned while trying to master a skill, bike park and trail system reviews, and more. Content is constantly being added so check back and <a href='./sign-up' className='hover:underline text-gray-400'>sign up!</a> 
+            <a href='./search' className='hover:underline text-fuchsia-700'>Here</a> you will find products reviews, articles covering what I have learned while trying to master a skill, bike park and trail system reviews, and more. Content is constantly being added so check back and <a href='./sign-up' className='hover:underline text-fuchsia-700'>sign up!</a> 
           </p>
 
           <p>

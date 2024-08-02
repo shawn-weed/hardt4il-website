@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 export default function DashComments() {
-    const { currentUser} = useSelector((state) => state.user);
+    const { currentUser } = useSelector((state) => state.user);
     const [comments, setComments] = useState([]);
     const [showMore, setShowMore] = useState(true);
     const [showModal, setShowModal] = useState(false);

@@ -7,6 +7,8 @@ import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate } from 'react-router-dom'
+import { inputTheme } from "../themes/textInputTheme";
+import { fileTheme } from "../themes/fileTheme";
 
 export default function CreatePost() {
   const [file, setFile] = useState(null);
@@ -81,13 +83,14 @@ export default function CreatePost() {
         <h1 className="text-center text-3xl my-7 font-semibold">Create a post</h1>
         <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div className="flex flex-col gap-4 sm:flex-row justify-between">
-                <TextInput type='text' placeholder='Title' required id='title'
+                <TextInput theme={inputTheme} color='grayCyan' type='text' placeholder='Title' required id='title'
                 className="flex-1"
                 onChange={(e) =>
                      setFormData({ ...formData, title: e.target.value })
                 }
                 />
                 <Select
+                  className=""
                   onChange={(e) => 
                     setFormData({ ...formData, category: e.target.value })
                   }
@@ -98,9 +101,8 @@ export default function CreatePost() {
                     <option value='Skills'>Skill</option>
                 </Select>
             </div>
-            <div className='flex gap-4 items-center justify-between border-2 
-            border-purple-500 border-dotted dotted p-3'>
-                <FileInput type='file' accepts='image/*' onChange={(e) => setFile(e.target.files[0])} />
+            <div className='flex gap-4 items-center justify-between border border-#[9d9d9d] rounded-lg p-3'>
+                <FileInput theme={fileTheme} type='file' accepts='image/*' onChange={(e) => setFile(e.target.files[0])} />
                 <Button 
                     type='button' 
                     gradientDuoTone='purpleToBlue' 
@@ -130,7 +132,7 @@ export default function CreatePost() {
             <ReactQuill 
                 theme="snow" 
                 placeholder='Write something...' 
-                className="h-72 mb-12" 
+                className="h-72 mb-12 dark:bg-[#2d2d2d]" 
                 required
                 onChange={(value) =>
                     setFormData({ ...formData, content: value })

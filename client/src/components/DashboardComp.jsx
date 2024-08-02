@@ -73,49 +73,49 @@ export default function DashboardComp() {
       <div className='flex flex-col p-3 dark:bg-[#3d3d3d] gap-4 md:w-72 w-full rounded-md shadow-md'>
         <div className='flex justify-between'>
           <div>
-            <h3 className='text-gray-500 text-md uppercase'>Total Users</h3>
+            <h3 className='text-gray-500 dark:text-gray-200 text-md uppercase'>Total Users</h3>
             <p className='text-2xl'>{totalUsers}</p>
           </div>
-          <HiOutlineUserGroup className='bg-fuchsia-500 text-gray-300 rounded-full text-5xl p-3 shadow-lg dark:border dark:border-gray-300'/>
+          <HiOutlineUserGroup className='bg-fuchsia-500 text-gray-200 rounded-full text-5xl p-3 shadow-lg dark:border dark:border-gray-300'/>
         </div>
         <div className='flex gap-2 text-sm'>
           <span className='text-green-500 flex items-center'>
             <HiArrowNarrowUp />
             {lastMonthUsers}
           </span>
-          <div className='text-gray-500'>Last Month</div>
+          <div className='text-gray-300'>Last Month</div>
           </div>
         </div>
         <div className='flex flex-col p-3 dark:bg-[#3d3d3d] gap-4 md:w-72 w-full rounded-md shadow-md dark:shadow-none'>
         <div className='flex justify-between'>
           <div>
-            <h3 className='text-gray-500 text-md uppercase'>Total Comments</h3>
+            <h3 className='text-gray-400 dark:text-gray-200 text-md uppercase'>Total Comments</h3>
             <p className='text-2xl'>{totalComments}</p>
           </div>
-          <HiAnnotation className='bg-[#3688B7] text-gray-300 rounded-full text-5xl p-3 shadow-lg dark:border dark:border-gray-300'/>
+          <HiAnnotation className='bg-[#3688B7] text-gray-200 rounded-full text-5xl p-3 shadow-lg dark:border dark:border-gray-300'/>
         </div>
         <div className='flex gap-2 text-sm'>
           <span className='text-green-500 flex items-center'>
             <HiArrowNarrowUp />
             {lastMonthComments}
           </span>
-          <div className='text-gray-500'>Last Month</div>
+          <div className='text-gray-300'>Last Month</div>
           </div>
         </div>
         <div className='flex flex-col p-3 dark:bg-[#3d3d3d] gap-4 md:w-72 w-full rounded-md shadow-md dark:shadow-none'>
         <div className='flex justify-between'>
           <div>
-            <h3 className='text-gray-500 text-md uppercase'>Total Posts</h3>
+            <h3 className='text-gray-400 dark:text-gray-200 text-md uppercase'>Total Posts</h3>
             <p className='text-2xl'>{totalPosts}</p>
           </div>
-          <HiDocumentText className='bg-[#4d4d4d] text-gray-300 rounded-full text-5xl p-3 shadow-lg dark:border dark:border-gray-300'/>
+          <HiDocumentText className='bg-[#4d4d4d] text-gray-200 rounded-full text-5xl p-3 shadow-lg dark:border dark:border-gray-300'/>
         </div>
         <div className='flex gap-2 text-sm'>
           <span className='text-green-500 flex items-center'>
             <HiArrowNarrowUp />
             {lastMonthPosts}
           </span>
-          <div className='text-gray-500'>Last Month</div>
+          <div className='text-gray-300'>Last Month</div>
           </div>
         </div>
       </div>
@@ -132,8 +132,8 @@ export default function DashboardComp() {
             </div>
             <Table hoverable>
                 <Table.Head>
-                    <Table.HeadCell>User image</Table.HeadCell>
-                    <Table.HeadCell>Username</Table.HeadCell>
+                    <Table.HeadCell className='dark:text-gray-300'>User image</Table.HeadCell>
+                    <Table.HeadCell className='dark:text-gray-300'>Username</Table.HeadCell>
                 </Table.Head>
                 {users && users.map((user) => (
                     <Table.Body key={user.id} className='divide-y'>
@@ -146,7 +146,7 @@ export default function DashboardComp() {
                                   className='w-10 h-10 rounded-full bg-gray-500'
                                   />
                             </Table.Cell>
-                            <Table.Cell>{user.username}</Table.Cell>
+                            <Table.Cell className='dark:text-gray-200'>{user.username}</Table.Cell>
                         </Table.Row>
                     </Table.Body>
                 ))}
@@ -155,7 +155,7 @@ export default function DashboardComp() {
         <div className='flex flex-col w-full md:w-auto shadow-md p-2
         rounded-md dark:bg-[#3d3d3d]'>
             <div className='flex justify between p-3 text-sm font-semibold'>
-                <h1 className='text-center p-2'>Recent Comments</h1>
+                <h1 className='text-center p-2 dark:text-gray-200'>Recent Comments</h1>
                 <Button gradientDuoTone='purpleToPink' outline>
                   <Link to={"/dashboard?tab=comments"}>
                     See all
@@ -164,17 +164,17 @@ export default function DashboardComp() {
             </div>
             <Table hoverable>
                 <Table.Head>
-                    <Table.HeadCell>Comment Content</Table.HeadCell>
-                    <Table.HeadCell>Likes</Table.HeadCell>
+                    <Table.HeadCell className='dark:text-gray-300'>Comment Content</Table.HeadCell>
+                    <Table.HeadCell className='dark:text-gray-300'>Likes</Table.HeadCell>
                 </Table.Head>
                 {comments && comments.map((comment) => (
                     <Table.Body key={comment.id} className='divide-y'>
                         <Table.Row className='bg-white dark:border-[#2d2d2d]
                         dark:bg-[#3d3d3d]'>
                             <Table.Cell className='w-96'>
-                                <p className='line-clamp-2'>{comment.content}</p>
+                                <p className='line-clamp-2 dark:text-gray-200'>{comment.content}</p>
                             </Table.Cell>
-                            <Table.Cell>{comment.numberOfLikes}</Table.Cell>
+                            <Table.Cell className='dark:text-gray-200'>{comment.numberOfLikes}</Table.Cell>
                         </Table.Row>
                     </Table.Body>
                 ))}
@@ -192,9 +192,9 @@ export default function DashboardComp() {
             </div>
             <Table hoverable>
                 <Table.Head>
-                    <Table.HeadCell>Post image</Table.HeadCell>
-                    <Table.HeadCell>Post Title</Table.HeadCell>
-                    <Table.HeadCell>Category</Table.HeadCell>
+                    <Table.HeadCell className='dark:text-gray-300'>Post image</Table.HeadCell>
+                    <Table.HeadCell className='dark:text-gray-300'>Post Title</Table.HeadCell>
+                    <Table.HeadCell className='dark:text-gray-300'>Category</Table.HeadCell>
                 </Table.Head>
                 {posts && posts.map((post) => (
                     <Table.Body key={post.id} className='divide-y'>
@@ -207,8 +207,8 @@ export default function DashboardComp() {
                                   className='w-14 h-10 rounded-md bg-gray-500'
                                   />
                             </Table.Cell>
-                            <Table.Cell className='w-96'>{post.title}</Table.Cell>
-                            <Table.Cell className='w-5'>{post.category}</Table.Cell>
+                            <Table.Cell className='w-96 dark:text-gray-200'>{post.title}</Table.Cell>
+                            <Table.Cell className='w-5 dark:text-gray-200'>{post.category}</Table.Cell>
                         </Table.Row>
                     </Table.Body>
                 ))}
