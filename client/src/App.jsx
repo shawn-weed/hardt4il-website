@@ -16,6 +16,7 @@ import PostPage from './pages/PostPage';
 import ScrollToTop from './components/ScrollToTop';
 import Search from './pages/Search';
 import AboutMe from './pages/AboutMe';
+import Privacy from './pages/Privacy';
 
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/search' element={<Search />} />
         <Route path='/post/:postSlug' element={<PostPage />} />
+        <Route path='/privacy' element={<Privacy />} />
       </Routes>
       <Footer />
     </BrowserRouter>

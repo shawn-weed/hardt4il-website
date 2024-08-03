@@ -1,7 +1,10 @@
 import React from 'react'
 
 export default function Projects() {
+
   return (
-    <div>Media</div>
+    <div>
+Media
+    </div>
   )
 }

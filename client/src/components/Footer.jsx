@@ -73,7 +73,8 @@ export default function FooterCom() {
                     <Footer.Title title='Legal' />
                     <Footer.LinkGroup col>
                         <Footer.Link 
-                            href='#'
+                            href='/privacy'
+                            target='_blank'
                         >
                             Privacy Policy
                         </Footer.Link>

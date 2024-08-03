@@ -92,15 +92,19 @@ export default function DashProfile() {
     if(imageFileUploading){
       setUpdateUserError('Please wait for image to upload');
       return;
+    } else if (formData.password !== formData.confirmPassword) {
+      return setUpdateUserError('Passwords do not match')
     }
     try {
       dispatch(updateStart());
+      const { confirmPassword, ...rest } = formData;
+      console.log(rest)
       const res = await fetch(`/api/user/update/${currentUser._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(rest),
       });
       const data = await res.json()
       if (!res.ok){
@@ -206,7 +210,13 @@ export default function DashProfile() {
               id='password' 
               placeholder='password' onChange={handleChange}
             />
-            
+            <TextInput
+              theme={inputTheme} 
+              type='password' 
+              id='confirmPassword' 
+              placeholder='Confirm password' onChange={handleChange}
+            />
+
             <Button 
               gradientDuoTone='purpleToPink' 
               type='submit' 

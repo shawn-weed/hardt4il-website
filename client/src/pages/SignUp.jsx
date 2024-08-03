@@ -20,14 +20,17 @@ export default function SignUp() {
     e.preventDefault();
     if (!formData.username || !formData.email || !formData.password){
       return setErrorMessage('Please fill out all fields.');
+    } else if (formData.password !== formData.confirmPassword) {
+      return setErrorMessage('Passwords do not match')
     }
     try {
       setLoading(true);
       setErrorMessage(null);
+      const { confirmPassword, ...rest } = formData; 
       const res = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(rest),
       });
       const data = await res.json();
       if (data.success === false) {
@@ -75,6 +78,9 @@ export default function SignUp() {
             </div>
               <Label value='Your password' />
               <TextInput type='password' placeholder='Password' id='password' 
+              onChange={handleChange}/>
+              <Label value='Confirm password' />
+              <TextInput type='password' placeholder='Confirm Password' id='confirmPassword' 
               onChange={handleChange}/>
               <Button gradientDuoTone='purpleToPink' type='submit' disabled={loading}>
                 {
