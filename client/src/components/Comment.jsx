@@ -4,7 +4,7 @@ import moment from 'moment';
 import { useSelector } from "react-redux";
 import { Button, Textarea } from 'flowbite-react'
 
-export default function Comment( {comment, onLike, onEdit, onDelete } ) {
+export default function Comment( { comment, onLike, onEdit, onDelete } ) {
     const [user, setUser] = useState({});
     const { currentUser } = useSelector((state) => state.user);
     const [isEditing, setIsEditing] = useState(false);

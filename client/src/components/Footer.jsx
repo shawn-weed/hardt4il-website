@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 export default function FooterCom() {
   const { theme } = useSelector((state) => state.theme);
   const logo = 'https://firebasestorage.googleapis.com/v0/b/hardt4il.appspot.com/o/assets%2FHardtail%20text%20logo.png?alt=media&token=297704a5-b292-4267-a3b2-1a35b119f80e'
-    const whiteLogo = 'https://firebasestorage.googleapis.com/v0/b/hardt4il.appspot.com/o/assets%2FHardtail%20logo%20white.png?alt=media&token=41d56f13-ff89-49fe-87b3-ef176fc965bb'
+  const whiteLogo = 'https://firebasestorage.googleapis.com/v0/b/hardt4il.appspot.com/o/assets%2FHardtail%20logo%20white.png?alt=media&token=41d56f13-ff89-49fe-87b3-ef176fc965bb'
   return (
     <Footer container className='border border-t-2 border-fuchsia-500 dark:!bg-[#1d1d1d]'>
         <div className='w-full max-w-7xl mx-auto'>
