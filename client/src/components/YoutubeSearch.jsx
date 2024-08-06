@@ -1,5 +1,5 @@
 import YouTube from 'react-youtube';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import { SlArrowRight, SlArrowLeft } from 'react-icons/sl';
 
 export default function YoutubeSearch({ playlist }) { 
@@ -9,6 +9,9 @@ export default function YoutubeSearch({ playlist }) {
     const insertPart = 'snippet';
     const [recentList, setRecentList] = useState([]);
     const navRef = useRef();
+    const opts = {height: '225px',
+        width: '400px'
+    }
 
     useEffect(() => { 
         const searchVideos = async () => {
@@ -33,26 +36,26 @@ export default function YoutubeSearch({ playlist }) {
 
     const handleScroll = (direction) => {
         if (direction === 'left') {
-            navRef ? (navRef.current.scrollLeft -= 300) : null;
+            navRef ? (navRef.current.scrollLeft -= 200) : null;
         } else {
-            navRef ? (navRef.current.scrollLeft += 300) : null;
+            navRef ? (navRef.current.scrollLeft += 200) : null;
         }
     }
-
+    
   return (
     
-    <div className='flex flex-row justify-center md:justify-start'>
+    <div className='flex flex-row justify-center md:justify-start absoslute'>
         <div className='my-auto'>
-            <button onClick={() => handleScroll('left')}><SlArrowLeft className='text-3xl hover:text-fuchsia-500'/></button>
+            <button className='max-sm:hidden' onClick={() => handleScroll('left')}><SlArrowLeft className='text-3xl hover:text-fuchsia-500'/></button>
         </div>
         <div ref={navRef} className='md:flex 
-        overflow-auto whitespace-nowrap scrollbar-none w-auto h-auto'>
+        overflow-auto whitespace-nowrap scrollbar-none'>
         {recentList.map((video) => (
-                <YouTube className='m-5' key={video} videoId={video}/>
+                <YouTube opts={opts} className='m-5' iframeClassName='' key={video} videoId={video}/>
         ))}
         </div>
         <div className='my-auto'>
-            <button onClick={() => handleScroll('right')}><SlArrowRight className='text-3xl hover:text-fuchsia-500'/></button>
+            <button className='max-sm:hidden' onClick={() => handleScroll('right')}><SlArrowRight className='text-3xl hover:text-fuchsia-500'/></button>
         </div>
     </div>
   )
