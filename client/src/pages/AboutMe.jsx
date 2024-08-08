@@ -16,16 +16,12 @@ export default function AboutMe() {
            drive me to learn and become better at what I do.
 
           </p>
-          This idea started when I wanted to build something around my love for mountain biking. I decided 
-          to dive into a full stack project. I chose a MERN stack for its popularity and features. React is
+          This passion project started when I wanted to combine my interests and build a site around my love for mountain biking. I decided 
+          to dive into a full stack project as an outlet for my creative side. I chose a MERN stack for its popularity and features. React is
           known for its scalability so I can quickly adapt the site to fit my needs as it grows.
           <p>
             <a href='https://www.github.com/kurknuckle' className='text-fuchsia-700 hover:underline'>Here </a> 
-            you can find my GitHub with other projects I have worked on. You can find me on <a href='https://www.linkedin.com/in/shawn-weed/' className='hover:underline text-fuchsia-700'>LinkedIn</a> as well
-          </p>
-
-          <p>
-          
+            you can find my GitHub with some of the other projects I have worked on. I have coded everything from small programs to automate account creation for active directory to larger projects like software designed to manage Chromebook assets which helped reduce the number of lost assets and streamline repairs. You can find me on <a href='https://www.linkedin.com/in/shawn-weed/' className='hover:underline text-fuchsia-700'>LinkedIn</a> as well. Please feel free to reach out there if you'd like to know more.
           </p>
 
           <p>

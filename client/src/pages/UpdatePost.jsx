@@ -1,13 +1,12 @@
 import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Editor from "../components/Editor";
 
 export default function UpdatePost() {
   const [file, setFile] = useState(null);
@@ -31,9 +30,10 @@ export default function UpdatePost() {
           return;
         }
         if (res.ok) {
-          console.log(data)
           setPublishError(null);
-          setFormData(data.posts[0]);
+          console.log(data.posts[0])
+          setFormData(data.posts[0])
+          console.log(formData)
         }
       };
 
@@ -79,30 +79,30 @@ export default function UpdatePost() {
         console.log(error);
     }
   };
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const res = await fetch(`/api/post/updatepost/${formData._id}/${currentUser._id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-                });
-            const data = await res.json();
-            if(!res.ok){
-                setPublishError(data.message);
-                return;
-            }
-            if (res.ok) {
-                setPublishError(null);
-                navigate(`/post/${data.slug}`)
-            }
-          } catch (error) {
-            setPublishError('Something went wrong');
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+          const res = await fetch(`/api/post/updatepost/${formData._id}/${currentUser._id}`, {
+              method: 'PUT',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData),
+              });
+          const data = await res.json();
+          if(!res.ok){
+              setPublishError(data.message);
+              return;
           }
-        };
-    return (
+          if (res.ok) {
+              setPublishError(null);
+              navigate(`/post/${data.slug}`)
+          }
+        } catch (error) {
+          setPublishError('Something went wrong');
+        }
+      };
+  return (
     <div className='p-3 ma-w-3xl mx-auto min-h-screen'>
         <h1 className="text-center text-3xl my-7 font-semibold">Update Post: {formData.title}</h1>
         <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
@@ -126,8 +126,7 @@ export default function UpdatePost() {
                     <option value='Skills'>Skill</option>
                 </Select>
             </div>
-            <div className='flex gap-4 items-center justify-between border-2 
-            border-purple-500 border-dotted dotted p-3'>
+            <div className='flex gap-4 items-center justify-between p-3'>
                 <FileInput type='file' accepts='image/*' onChange={(e) => setFile(e.target.files[0])} />
                 <Button 
                     type='button' 
@@ -155,15 +154,11 @@ export default function UpdatePost() {
                   className='min-w-fit h-fit object-cover'
                 />
             )}
-            <ReactQuill 
-                theme="snow"
-                value={formData.content} 
-                placeholder='Write something...' 
-                className="h-72 mb-12" 
-                required
-                onChange={(value) =>
+            <Editor 
+              onChange={(value) =>
                     setFormData({ ...formData, content: value })
                 }
+                value={formData.content}
             />
             <Button type='submit' gradientDuoTone='purpleToPink'>
                 Update

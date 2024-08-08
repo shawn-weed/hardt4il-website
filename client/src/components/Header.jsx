@@ -125,6 +125,11 @@ export default function Header() {
                     Media
                 </Link>
             </Navbar.Link>
+            <Navbar.Link theme={linkTheme} active={path === "/search"} as={'div'}>
+                <Link className='hidden lg:flex justify-center' to='/search'>
+                    Search
+                </Link>
+            </Navbar.Link>
         </Navbar.Collapse>    
     </Navbar>
   )

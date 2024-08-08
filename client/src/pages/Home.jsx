@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className=''>
+      <div className='md:w-100'>
         <div className='videoText'>
           <div className=''>
             <video src={video} autoPlay loop muted playsInline/>

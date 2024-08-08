@@ -31,7 +31,6 @@ export default function PostPage() {
                     try {
                       const authorRes = await fetch(`/api/user/${data.posts[0].userId}`)
                       const authorData = await authorRes.json();
-                      console.log(authorData);
                       if (res.ok) {
                         setAuthor(authorData.username);
                         setImg(authorData.profilePicture);
