@@ -1,5 +1,5 @@
 import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar'
@@ -13,6 +13,7 @@ export default function UpdatePost() {
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({})
+  const prevFormData = useRef('')
   const [publishError, setPublishError] = useState(null);
   const { postId } = useParams();
 
@@ -31,17 +32,16 @@ export default function UpdatePost() {
         }
         if (res.ok) {
           setPublishError(null);
-          console.log(data.posts[0])
+          prevFormData.current = formData;
           setFormData(data.posts[0])
-          console.log(formData)
+          console.log(postId)
         }
       };
-
       fetchPost();
     } catch (error) {
       console.log(error.message);
     }
-  }, [postId]);
+  }, [ postId ]);
 
   const handleUploadImage = async () => {
     try {
@@ -69,7 +69,7 @@ export default function UpdatePost() {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                 setImageUploadProgress(null);
                 setImageUploadError(null);
-                setFormData({ ...formData, image: downloadURL });
+                // setFormData({ ...formData, image: downloadURL });
             });
           }
       );
@@ -109,16 +109,16 @@ export default function UpdatePost() {
             <div className="flex flex-col gap-4 sm:flex-row justify-between">
                 <TextInput type='text' placeholder='Title' required id='title'
                 className="flex-1"
-                onChange={(e) =>
-                     setFormData({ ...formData, title: e.target.value })
-                }
                 value={formData.title}
+                onChange={(e) =>
+                       setFormData({ ...formData, title: e.target.value })
+                  }
                 />
                 <Select
-                  onChange={(e) => 
-                    setFormData({ ...formData, category: e.target.value })
-                  }
-                  value={formData.category}
+                    value={formData.category}
+                  // onChange={(e) => 
+                    //   setFormData({ ...formData, category: e.target.value })
+                    // }
                 >
                     <option value='uncategorized'>Select a category</option>
                     <option value='Product Review'>Product Review</option>
@@ -154,11 +154,11 @@ export default function UpdatePost() {
                   className='min-w-fit h-fit object-cover'
                 />
             )}
-            <Editor 
-              onChange={(value) =>
-                    setFormData({ ...formData, content: value })
-                }
-                value={formData.content}
+            <Editor
+              // onChange={(value) =>
+                //       setFormData({ ...formData, content: value })
+                //   }
+                value={formData.content} 
             />
             <Button type='submit' gradientDuoTone='purpleToPink'>
                 Update
