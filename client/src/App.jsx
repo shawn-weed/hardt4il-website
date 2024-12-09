@@ -17,6 +17,9 @@ import ScrollToTop from './components/ScrollToTop';
 import Search from './pages/Search';
 import AboutMe from './pages/AboutMe';
 import Privacy from './pages/Privacy';
+import BMXHome from './pages/BMXHome';
+import MTBHome from './pages/MTBHome';
+
 
 
 export default function App() {
@@ -41,6 +44,8 @@ export default function App() {
         <Route path='/search' element={<Search />} />
         <Route path='/post/:postSlug' element={<PostPage />} />
         <Route path='/privacy' element={<Privacy />} />
+        <Route path='/BMXHome' element={<BMXHome />} />
+        <Route path='/MTBHome' element={<MTBHome />} />
       </Routes>
       <Footer />
     </BrowserRouter>

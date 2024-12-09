@@ -55,7 +55,7 @@ export default function Header() {
     }
 
   return (
-    <Navbar className='border-b-2 dark:border-gray-500'>
+    <Navbar className='border-b-2 dark:border-gray-500 z-50'>
         <Link to="/" className=''>
           <span className=''>
             {theme === 'light' ? <img src={logo} className='h-12 border border-fuchsia-500 rounded-lg' /> :

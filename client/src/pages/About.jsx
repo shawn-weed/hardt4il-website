@@ -9,7 +9,7 @@ export default function About() {
         </div>
         <div className='text-md text-gray-300 flex flex-col gap-6'>
           <p>
-            Hardt4il is a brand dedicated to Mountain Biking. Sure, we may cover other topics and share our thoughts on RC cars, video games, music, etc. but at our core we are bikers just filling the time until our next ride. Come join us and stay up to date on the latest mountain biking gear, tips, and trends.
+            Hardt4il is a brand dedicated to BMX and mountain biking. Sure, we may cover other topics and share our thoughts on video games, music, etc. but at our core we are bikers just filling the time until our next ride. Come join us and stay up to date on the latest gear, tips, and trends.
           </p>
 
           <p>

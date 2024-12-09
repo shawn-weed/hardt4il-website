@@ -84,6 +84,17 @@ export default function CreatePost() {
         <h1 className="text-center text-3xl my-7 font-semibold">Create a post</h1>
         <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div className="flex flex-col gap-4 sm:flex-row justify-between">
+                <Select
+                  className=""
+                  onChange={(e) =>
+                    setFormData({...formData, section: e.target.value })
+                  }
+                  required
+                  >
+                    <option value=''>Select a section</option>
+                    <option value='BMX'>BMX</option>
+                    <option value='MTB'>MTB</option>
+                </Select>
                 <TextInput theme={inputTheme} color='grayCyan' type='text' placeholder='Title' required id='title'
                 className="flex-1"
                 onChange={(e) =>

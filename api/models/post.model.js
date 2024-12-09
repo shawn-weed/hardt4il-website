@@ -19,6 +19,10 @@ const postSchema = new mongoose.Schema(
             type: String,
             default: 'https://imageshack.com/i/pmzv2Rosj',
         },
+        section: {
+            type: String,
+            required: true,
+        },
         category: {
             type: String,
             default: 'uncategorized'
